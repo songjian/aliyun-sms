@@ -39,7 +39,7 @@ module Aliyun
           'AccessKeyId' => configuration.access_key_id,
           'Action' => configuration.action,
           'Format' => configuration.format,
-          # 'ParamString' => message_param,
+          'ParamString' => message_param,
           'TemplateParam' => message_param,
           # 'RecNum' => mobile_num,
           'PhoneNumbers' => mobile_num,
@@ -56,7 +56,7 @@ module Aliyun
 
       def send(mobile_num, template_code, message_param)
         sms_params = create_params(mobile_num, template_code, message_param)
-        Typhoeus.post("https://dysmsapi.aliyuncs.com/",
+        Typhoeus.get("https://dysmsapi.aliyuncs.com/",
                  headers: {'Content-Type'=> "application/x-www-form-urlencoded"},
                  body: post_body_data(configuration.access_key_secret, sms_params))
       end
