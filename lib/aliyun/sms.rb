@@ -70,6 +70,21 @@ module Aliyun
       # &Timestamp=2017-07-12T02%3A42%3A19Z
       # &Version=2017-05-25
 
+
+      # Signature=VP3BzTP7s2nhN06VVQH0TO5i5dE%3D
+      # &AccessKeyId=LTAIRu6djaTrSQTb
+      # &Action=SendSms
+      # &Format=JSON
+      # &PhoneNumbers=13969832203
+      # &RegionId=cn-hangzhou
+      # &SignName=安踏茁壮成长
+      # &SignatureMethod=HMAC-SHA1&SignatureNonce=20170813145331958
+      # &SignatureVersion=1.0
+      # &TemplateCode=SMS_84620016
+      # &Timestamp=2017-08-13T14:53:31Z
+      # &TemplateParam={\"number\":\"345678\"}
+      # &Version=2017-05-25"
+
       def send(mobile_num, template_code, message_param)
         sms_params = create_params(mobile_num, template_code, message_param)
         Typhoeus.get("https://dysmsapi.aliyuncs.com/",
@@ -87,7 +102,7 @@ module Aliyun
             qstring += "&#{key}=#{value}"
           end
         end
-        return qstring
+        return URI::escape(qstring)
       end
 
       # 原生参数经过2次编码拼接成标准字符串
