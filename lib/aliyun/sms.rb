@@ -49,7 +49,7 @@ module Aliyun
           'SignatureVersion' => configuration.signature_version,
           'TemplateCode' => template_code,
           'Timestamp' => seed_timestamp,
-          'TemplateParam' => message_param,
+          # 'TemplateParam' => message_param,
           'Version' => configuration.sms_version,
         }
       end
