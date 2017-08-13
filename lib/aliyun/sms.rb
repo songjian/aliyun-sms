@@ -102,7 +102,8 @@ module Aliyun
             qstring += "&#{key}=#{value}"
           end
         end
-        return URI::escape(qstring)
+        # return URI::escape(qstring)
+        return qstring
       end
 
       # 原生参数经过2次编码拼接成标准字符串
