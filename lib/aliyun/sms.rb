@@ -40,7 +40,7 @@ module Aliyun
           'Action' => configuration.action,
           'Format' => configuration.format,
           'ParamString' => message_param,
-          'TemplateParam' => message_param,
+          # 'TemplateParam' => message_param,
           # 'RecNum' => mobile_num,
           'PhoneNumbers' => mobile_num,
           'RegionId' => configuration.region_id,
