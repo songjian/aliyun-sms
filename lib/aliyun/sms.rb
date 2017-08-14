@@ -102,7 +102,6 @@ module Aliyun
             qstring += "&#{key}=#{value}"
           end
         end
-        # return URI::escape(qstring)
         return qstring
       end
 
