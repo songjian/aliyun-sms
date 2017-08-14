@@ -39,8 +39,6 @@ module Aliyun
           'AccessKeyId' => configuration.access_key_id,
           'Action' => configuration.action,
           'Format' => configuration.format,
-          # 'ParamString' => message_param,
-          # 'RecNum' => mobile_num,
           'PhoneNumbers' => mobile_num,
           'RegionId' => configuration.region_id,
           'SignName' => configuration.sign_name,
@@ -53,37 +51,6 @@ module Aliyun
           'Version' => configuration.sms_version,
         }
       end
-
-      # Signature=zJDF%2BLrzhj%2FThnlvIToysFRq6t4%3D&
-      # AccessKeyId=testId
-      # &Action=SendSms
-      # &Format=XML
-      # &OutId=123
-      # &PhoneNumbers=15300000001
-      # &RegionId=cn-hangzhou
-      # &SignName=%E9%98%BF%E9%87%8C%E4%BA%91%E7%9F%AD%E4%BF%A1%E6%B5%8B%E8%AF%95%E4%B8%93%E7%94%A8
-      # &SignatureMethod=HMAC-SHA1
-      # &SignatureNonce=45e25e9b-0a6f-4070-8c85-2956eda1b466
-      # &SignatureVersion=1.0
-      # &TemplateCode=SMS_71390007
-      # &TemplateParam=%7B%22customer%22%3A%22test%22%7D
-      # &Timestamp=2017-07-12T02%3A42%3A19Z
-      # &Version=2017-05-25
-
-
-      # Signature=VP3BzTP7s2nhN06VVQH0TO5i5dE%3D
-      # &AccessKeyId=LTAIRu6djaTrSQTb
-      # &Action=SendSms
-      # &Format=JSON
-      # &PhoneNumbers=13969832203
-      # &RegionId=cn-hangzhou
-      # &SignName=安踏茁壮成长
-      # &SignatureMethod=HMAC-SHA1&SignatureNonce=20170813145331958
-      # &SignatureVersion=1.0
-      # &TemplateCode=SMS_84620016
-      # &Timestamp=2017-08-13T14:53:31Z
-      # &TemplateParam={\"number\":\"345678\"}
-      # &Version=2017-05-25"
 
       def send(mobile_num, template_code, message_param)
         sms_params = create_params(mobile_num, template_code, message_param)
