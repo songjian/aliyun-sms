@@ -48,9 +48,9 @@ module Aliyun
           'SignatureNonce' => seed_signature_nonce,
           'SignatureVersion' => configuration.signature_version,
           'TemplateCode' => template_code,
+          'TemplateParam' => message_param,
           'Timestamp' => seed_timestamp,
           'Version' => configuration.sms_version,
-          'TemplateParam' => message_param,
         }
       end
 
